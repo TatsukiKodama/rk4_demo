@@ -152,12 +152,25 @@ make
 ```
 git rm --cashed [file name]
 ```
-と入力する。
+と入力します。
 
 #### 間違って不必要なディレクトリをpush
 焦らずに.gitignoreに、そのディレクトr名を記入後、
 ```
 git rm -r --cached [directory name]/
 ```
+と入力します。
+
+### 便利コマンド系
+#### tree
+ディレクトリ階層のツリーを表示させたいときは
+```
+ tree -a -I "venv|__pycache__|.git|...無視するファイルやディレクトリ|"
+```
+と入力します。ただし、brewでtreeをインストールしていることが前提です。インストール方法は非常に簡単で
+```
+brew install tree
+```
+と入力してください。
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
