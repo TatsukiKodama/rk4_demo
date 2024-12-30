@@ -24,7 +24,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)/$(SRCDIR)
 
 # サブディレクトリの作成
 $(OBJDIR)/$(SRCDIR):
-	mkdir -p $(OBJDIR)/$(SRCDIR)
+	mkdir -p $(OBJDIR)
 
 # クリーンアップ
 clean:

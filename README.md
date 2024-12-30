@@ -53,15 +53,33 @@
 ## ディレクトリ構成
 
 <!-- Treeコマンドを使ってディレクトリ構成を記載 -->
-rk4_demo  
-├── Makefile  
-├── README.md  
-├── main.c  
-├── output/   
-└── src/  
-    ├── calc.c  
-    ├── calc.h  
-    └── const.h  
+ <pre>
+.
+├── .gitignore
+├── Makefile
+├── README.md
+├── fig_make.py
+├── main.c
+├── obj
+├── output
+│   ├── dat
+│   └── fig
+├── requirements.txt
+└── src
+    ├── calc.c
+    ├── calc.h
+    ├── const.c
+    ├── const.h
+    ├── diffeqs.c
+    ├── diffeqs.h
+    ├── initialize.c
+    ├── initialize.h
+    ├── run.c
+    ├── run.h
+    ├── setting.c
+    └── setting.h
+</pre>
+
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
