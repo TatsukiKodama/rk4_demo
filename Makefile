@@ -1,23 +1,31 @@
-# コンパイラとフラグ
+# コンパイラとフラグの設定
 CC = clang
-CFLAGS = -Wall -Wextra -O2
+CFLAGS = -Wall -Wextra -std=c99
 
-# ターゲット名
+# ソースファイルの自動検出
+SRCDIR = src
+OBJDIR = obj
+SRCS = $(wildcard $(SRCDIR)/*.c) main.c  # main.c を追加
+OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+
+# 出力ファイル名
 TARGET = main
 
-# ソースファイルと出力ファイル
-SRCDIR = src
-SRCS = main.c $(SRCDIR)/calc.c $(SRCDIR)/diffeqs.c
-OBJS = $(SRCS:.c=.o)
+# すべてのターゲット
+all: $(TARGET)
 
-# ルール: 実行ファイルを作成
+# 実行ファイルの生成
 $(TARGET): $(OBJS)
-	$(CC) -o $@ $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS)
 
-# ルール: 個別にオブジェクトファイルを作成
-%.o: %.c
+# オブジェクトファイルの生成
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)/$(SRCDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+# サブディレクトリの作成
+$(OBJDIR)/$(SRCDIR):
+	mkdir -p $(OBJDIR)/$(SRCDIR)
 
 # クリーンアップ
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -rf $(OBJDIR) $(TARGET)

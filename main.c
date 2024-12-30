@@ -1,35 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "./src/const.h"  // 定数
-#include "./src/calc.h"   // 数値計算用のルーチン
-#include "./src/diffeqs.h"// いろんな種類の微分方程式がある（予定）
+#include "./src/const.h"        // 定数
+#include "./src/calc.h"         // 数値計算用のルーチン
+#include "./src/diffeqs.h"      // いろんな種類の微分方程式がある（予定）
+#include "./src/setting.h"      // 設定
+#include "./src/initialize.h"   //
+#include "./src/run.h"          //
 
-int main (void) {
-    FILE *fp;
-    fp = fopen("./output/test.dat", "w");
+int main(void) {
+    // シミュレーションパラメータを設定
+    SimulationParams params = {
+        .num_steps = 10,
+        .t_ini = 0.0,
+        .t_end = 2.0 * PI,
+        .dt = (2.0 * PI) / 10 // t_end - t_ini / num_steps
+    };
 
-    int y_size = 2; // 必要な配列のサイズ
-    double *y = malloc(y_size * sizeof(double));
-    if (y == NULL) {
-        perror("Memory allocation failed");
-        return 1;
-    }
+    // 出力ファイルを開く
+    FILE *fp = open_file("./output/test.dat");
+
+    // 状態配列を初期化
+    int y_size = 2;
+    double *y = initialize_array(y_size);
     y[0] = 1.0;
     y[1] = 0.0;
-    int num = 10;
-    double t_ini = 0;
-    double t_end = 2.0*PI;
-    double dt = (t_end - t_ini)/num;
-    double t = 0.0;
-    fprintf(fp, "%e %e %e\n", t, y[0], y[1]);
-    for(int i = 0; i <= num; i++) {
-        t = t_ini + i*dt;
-        printf("%e %e %e\n", t, y[0], y[1]);
-        fprintf(fp, "%e %e %e\n", t, y[0], y[1]);
-        runge_kutta_4(diffeq_harmonic_oscillator, t, y, y_size, dt);
-    }
 
+    // シミュレーションを実行
+    run_calculation(fp, params, y, y_size);
+
+    // 後処理
     free(y);
+    fclose(fp);
     return 0;
 }
-

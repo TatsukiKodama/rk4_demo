@@ -2,3 +2,4 @@
 *.dat
 main
 output/
+obj/

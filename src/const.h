@@ -1,7 +1,6 @@
 #ifndef CONST_H
 #define CONST_H
 
-#include <math.h>
-double PI = M_PI;
+extern const double PI;  // グローバル変数の宣言
 
-#endif  /* CONST_H */
+#endif
