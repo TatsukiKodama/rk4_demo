@@ -6,3 +6,7 @@ num tini, tend, diffeq
 時間　y[0]　y[1]　y[2]…. 
 
 calc(diffeq, tini, tend, num, path)
+
+
+tree 描画↓
+ tree -a -I "venv|__pycache__|.git|*.o|main|.DS_Store|test.dat|*.pdf|doc"
