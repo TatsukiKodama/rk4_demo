@@ -7,7 +7,7 @@ TARGET = main
 
 # ソースファイルと出力ファイル
 SRCDIR = src
-SRCS = main.c $(SRCDIR)/calc.c $(SRCDIR)/diffeq.c
+SRCS = main.c $(SRCDIR)/calc.c $(SRCDIR)/diffeqs.c
 OBJS = $(SRCS:.c=.o)
 
 # ルール: 実行ファイルを作成

@@ -1,0 +1,8 @@
+入力　
+num tini, tend, diffeq
+出力
+→ファイル
+列
+時間　y[0]　y[1]　y[2]…. 
+
+calc(diffeq, tini, tend, num, path)
