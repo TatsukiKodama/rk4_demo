@@ -8,8 +8,8 @@ typedef struct {
     double t_ini;
     double t_end;
     double dt;
-} SimulationParams;
+} CalculationParams;
 
-SimulationParams setup_simulation();
+CalculationParams setup_simulation();
 
 #endif

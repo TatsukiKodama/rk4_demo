@@ -8,27 +8,23 @@
 #include "./src/run.h"          //
 
 int main(void) {
-    // シミュレーションパラメータを設定
-    SimulationParams params = {
-        .num_steps = 10,
-        .t_ini = 0.0,
-        .t_end = 2.0 * PI
-    };
+    CalculationParams params = setup_simulation();
+    FILE *fp = open_file("./output/dat/test.dat");
 
-    // 出力ファイルを開く
-    FILE *fp = open_file("./output/test.dat");
-
-    // 状態配列を初期化
+    // 初期条件
     int y_size = 2;
     double *y = initialize_array(y_size);
     y[0] = 1.0;
     y[1] = 0.0;
 
     // シミュレーションを実行
-    run_calculation(fp, params, y, y_size);
+    run_calculation_rk4(fp, params, y, y_size);
 
     // 後処理
     free(y);
     fclose(fp);
+
+    // pythonを実行
+    run_python();
     return 0;
 }

@@ -1,5 +1,12 @@
-*.o
-*.dat
 main
-output/
+*.o
 obj/
+
+# output系
+output/
+*.dat
+*.pdf
+
+# python系
+venv
+__pycache__
