@@ -8,6 +8,8 @@ OBJDIR = obj
 SRCS = $(wildcard $(SRCDIR)/*.c) main.c  # main.c を追加
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
+# ========================================================== #
+
 # 出力ファイル名
 TARGET = main
 

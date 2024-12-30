@@ -145,4 +145,19 @@ make
 ## トラブルシューティング
 工事中👷
 
+### GitHub系
+
+#### 間違って不必要なファイルをpush
+焦らずに.gitignoreに、そのファイル名を記入後、
+```
+git rm --cashed [file name]
+```
+と入力する。
+
+#### 間違って不必要なディレクトリをpush
+焦らずに.gitignoreに、そのディレクトr名を記入後、
+```
+git rm -r --cached [directory name]/
+```
+
 <p align="right">(<a href="#top">トップへ</a>)</p>
