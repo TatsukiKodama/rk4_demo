@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> 
+#include <string.h>
 #include "./run.h"
 #include "./calc.h"
 #include "./diffeqs.h"
@@ -14,8 +15,10 @@ void run_calculation_rk4(FILE *fp, CalculationParams params, double *y, int y_si
     }
 }
 
-void run_python(void) {
-    int result = system("python fig_make.py");
+void run_python(const char *script_name) {
+    char cmd[256] = "python ";
+    strcat(cmd, script_name);
+    int result = system(cmd);
     if (result == 0) {
         printf("Python script executed successfully\n");
     } else {

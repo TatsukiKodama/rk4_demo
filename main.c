@@ -24,7 +24,8 @@ int main(void) {
     free(y);
     fclose(fp);
 
-    // pythonを実行
-    run_python();
+    // プロットするためにpythonを実行
+    char script_name[256] = "fig_make.py";
+    run_python(script_name);
     return 0;
 }
