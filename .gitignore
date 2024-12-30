@@ -10,3 +10,6 @@ output/
 # python系
 venv
 __pycache__
+
+# その他
+doc/

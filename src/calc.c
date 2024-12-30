@@ -1,6 +1,6 @@
 #include "calc.h"
 
-// forth order explicit Runge-Kutta method
+// 4次のルンゲクッタ法
 void runge_kutta_4(double (*pf)(double,double[],int), double x, double y[], int y_size, double dx) {
     double h = dx/2.0;
     double t1[y_size], t2[y_size], t3[y_size];             

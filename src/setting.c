@@ -3,9 +3,9 @@
 
 CalculationParams setup_simulation() {
     CalculationParams params = {
-        .num_steps = 10,
+        .num_steps = 100,
         .t_ini = 0.0,
-        .t_end = 2.0 * PI
+        .t_end = 4.0*PI
     };
     return params;
 }
