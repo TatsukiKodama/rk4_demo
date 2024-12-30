@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "./src/const.h"        // 定数
-#include "./src/calc.h"         // 数値計算用のルーチン
-#include "./src/diffeqs.h"      // いろんな種類の微分方程式がある（予定）
-#include "./src/setting.h"      
-#include "./src/initialize.h"   
-#include "./src/run.h"          
+#include "./src/setting.h"      // 設定
+#include "./src/initialize.h"   // 初期化
+#include "./src/run.h"          // 実行
 
 int main(void) {
     CalculationParams params = setup_calculation();

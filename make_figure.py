@@ -24,7 +24,7 @@ plt.plot(x, y2, "--", label=r'$\dot{y}$', color='gray')
 # ラベルとタイトルを追加
 plt.xlabel(r'$t$ [time]')
 plt.ylabel(r'$y, \dot{y}$')
-plt.title(r'Harmonic oscillator')
+plt.title(r'Damping oscillator')
 
 # 凡例の表示
 plt.legend()
