@@ -1,16 +1,7 @@
 #include <stdio.h>
 #include "./src/const.h"  // 定数
 #include "./src/calc.h"   // 数値計算用のルーチン
-
-double diffeq_harmonic_oscillator(double x, double y[], int i) {
-    if (i == 0) {
-        return y[1];
-    }
-    if (i == 1) {
-        return -y[0];
-    }
-    else return 0;
-}
+#include "./src/diffeqs.h"// いろんな種類の微分方程式がある（予定）
 
 int main (void) {
     FILE *fp;
@@ -24,7 +15,7 @@ int main (void) {
     double t_end = 2.0;
     double dt = (t_end - t_ini)/num;
     double t = t_ini;
-    while(t<=t_end) {
+    while(t <= t_end) {
         runge_kutta_4(diffeq_harmonic_oscillator, t, y, dt, 2);
         printf("%e %e %e\n", t, y[0], y[1]);
         t += dt;
