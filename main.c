@@ -3,7 +3,7 @@
 #include "./src/const.h"        // 定数
 #include "./src/calc.h"         // 数値計算用のルーチン
 #include "./src/diffeqs.h"      // いろんな種類の微分方程式がある（予定）
-#include "./src/setting.h"      // 設定
+#include "./src/setting.h"      //
 #include "./src/initialize.h"   //
 #include "./src/run.h"          //
 
@@ -12,8 +12,7 @@ int main(void) {
     SimulationParams params = {
         .num_steps = 10,
         .t_ini = 0.0,
-        .t_end = 2.0 * PI,
-        .dt = (2.0 * PI) / 10 // t_end - t_ini / num_steps
+        .t_end = 2.0 * PI
     };
 
     // 出力ファイルを開く
