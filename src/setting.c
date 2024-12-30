@@ -1,7 +1,7 @@
 #include "setting.h"
 #include "const.h"  
 
-CalculationParams setup_simulation() {
+CalculationParams setup_calculation() {
     CalculationParams params = {
         .num_steps = 100,
         .t_ini = 0.0,

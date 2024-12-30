@@ -7,9 +7,8 @@ typedef struct {
     int num_steps;
     double t_ini;
     double t_end;
-    double dt;
 } CalculationParams;
 
-CalculationParams setup_simulation();
+CalculationParams setup_calculation();
 
 #endif

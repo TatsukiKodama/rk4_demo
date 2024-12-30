@@ -8,7 +8,7 @@
 #include "./src/run.h"          
 
 int main(void) {
-    CalculationParams params = setup_simulation();
+    CalculationParams params = setup_calculation();
     FILE *fp = open_file("./output/dat/test.dat");
 
     // 初期条件
@@ -17,7 +17,7 @@ int main(void) {
     y[0] = 1.0;
     y[1] = 0.0;
 
-    // シミュレーションを実行
+    // 計算を実行
     run_calculation_rk4(fp, params, y, y_size);
 
     // 後処理
@@ -25,7 +25,7 @@ int main(void) {
     fclose(fp);
 
     // プロットするためにpythonを実行
-    char script_name[256] = "fig_make.py";
+    char script_name[256] = "make_figure.py";
     run_python(script_name);
     return 0;
 }
