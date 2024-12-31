@@ -7,6 +7,7 @@ plt.rcParams.update({
     'font.family': 'serif',  # セリフ体を使用
     'font.serif': ['Times New Roman'],  # 使用するフォントを指定（必要に応じて変更）
     'text.latex.preamble': r'\usepackage{amsmath}',  # 数式のためのパッケージを読み込む
+    'font.size': 14
 })
 
 # データファイルの読み込み
@@ -18,8 +19,8 @@ y1 = data[:, 1]
 y2 = data[:, 2]
 
 # グラフの描画
-plt.plot(x, y1, "-", label=r'$y$', color='black') 
-plt.plot(x, y2, "--", label=r'$\dot{y}$', color='gray') 
+plt.plot(x, y1, "-", label=r'$y$', color='red') 
+plt.plot(x, y2, "--", label=r'$\dot{y}$', color='blue') 
 
 # ラベルとタイトルを追加
 plt.xlabel(r'$t$ [time]')
